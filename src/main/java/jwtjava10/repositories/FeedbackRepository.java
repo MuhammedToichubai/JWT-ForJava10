@@ -1,4 +1,11 @@
 package jwtjava10.repositories;
 
-public interface FeedbackRepository extends org.springframework.data.jpa.repository.JpaRepository<jwtjava10.models.Feedback, java.lang.Long> {
+import jwtjava10.models.Feedback;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+import org.springframework.stereotype.Repository;
+
+@Repository
+@RepositoryRestResource(path = "feedbacks")
+public interface FeedbackRepository extends JpaRepository<Feedback, Long> {
 }

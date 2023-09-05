@@ -1,4 +1,15 @@
-package jwtjava10.models;/**
-* @author Mukhammed Asantegin
-*/public enum Role {
+package jwtjava10.models;
+
+import org.springframework.security.core.GrantedAuthority;
+
+/**
+ * @author Mukhammed Asantegin
+ */
+public enum Role implements GrantedAuthority {
+    ADMIN, USER;
+
+    @Override
+    public String getAuthority() {
+        return name();
+    }
 }
